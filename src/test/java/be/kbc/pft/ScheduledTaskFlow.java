@@ -6,7 +6,6 @@ import static org.mockito.Mockito.when;
 import be.kbc.pft.scheduled.CsvTransferTask;
 import be.kbc.pft.service.FileService;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

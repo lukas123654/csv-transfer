@@ -1,14 +1,14 @@
 package be.kbc.pft.scheduled;
 
-import static java.util.Calendar.*;
+import static java.util.Calendar.DATE;
+import static java.util.Calendar.MONTH;
+import static java.util.Calendar.YEAR;
+import static java.util.Calendar.getInstance;
 
 import be.kbc.pft.repository.entity.Csv;
 import be.kbc.pft.service.CsvTransferService;
 import be.kbc.pft.service.FileService;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Calendar;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

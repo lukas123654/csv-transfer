@@ -49,6 +49,7 @@ public class CsvTransferTaskTest {
     verify(csvTransferService).deleteAllCsvFiles();
     verify(csvTransferService).saveCsvFile(argumentCaptor.capture());
 
+    assertThat(argumentCaptor.getValue().getName()).isNotBlank();
     assertThat(argumentCaptor.getValue().getFile()).isEqualTo("csv file content".getBytes());
   }
 
