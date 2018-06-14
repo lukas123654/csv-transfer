@@ -34,16 +34,17 @@ public class CsvTransferTask {
         : csvFolderPath + "/";
   }
 
-  @Scheduled(cron = "0 23 0 * * ?")
+  @Scheduled(cron = "${csv.cron}")
   public void execute() throws IOException {
     logger.info("File transfer task started.");
 
     Calendar calendar = getInstance();
-    String fileName = "pearlapp_"
+    String fileName = "app_"
         + calendar.get(YEAR)
         // months are zero based -> JANUARY = 0
         + ((calendar.get(MONTH) + 1) < 10 ? "0" + (calendar.get(MONTH) + 1) : (calendar.get(MONTH) + 1))
-        + (calendar.get(DATE) < 10 ? "0" + calendar.get(DATE): calendar.get(DATE))
+        // previous day
+        + ((calendar.get(DATE) - 1) < 10 ? "0" + (calendar.get(DATE) - 1) : (calendar.get(DATE) -1))
         + ".csv";
 
     Csv csv = new Csv()
